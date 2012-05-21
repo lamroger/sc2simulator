@@ -1,5 +1,5 @@
 class Zerg {
-  
+
   // Units
   class drone;
   class overlord;
@@ -38,10 +38,12 @@ class Zerg {
   
 public:
   Zerg();
-  
+  int minerals_per_min();
+  int gas_per_min();
   
 private:
-  int workers;
+  int mineral_workers;
+  int gas_workers;
   int mining_bases;
   int army_value;
   int larva;
@@ -50,4 +52,4 @@ private:
   int minerals;
   int gas;
   
-}
+};
