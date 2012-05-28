@@ -49,6 +49,8 @@ public:
 	int gas_per_min();
 	void print();
 	void make_unit(int index);
+	void change_minerals(int i);
+	void change_gas(int i);
   
 private:
 	int mineral_workers;
