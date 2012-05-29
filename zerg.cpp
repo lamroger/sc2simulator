@@ -26,26 +26,22 @@ int Zerg::gas_per_min() {
 }
 
 void Zerg::print() {
-	cout << "Minerals per Minute: " << minerals_per_min()  << endl;
-	cout << "Gas per Minute: " << gas_per_min()  << endl;
-	cout << endl;
-	cout << "Mineral Workers: " << mineral_workers  << endl;
-	cout << "Gas Workers: " << gas_workers  << endl;
-	cout << "Mining Bases: " << mining_bases  << endl;
-	cout << "Max Supply: " << max_supply  << endl;
-	cout << "Army Value: " << army_value  << endl;
-	cout << "Larva: " << larva  << endl;
-	cout << endl;
-	cout << "Minerals: " << minerals << endl;
-	cout << "Gas: " << gas << endl;
+	cout << "Minerals per Minute: " << minerals_per_min()  << "\n";
+	cout << "Gas per Minute: " << gas_per_min()  << "\n";
+	cout << "\n";
+	cout << "Mineral Workers: " << mineral_workers  << "\n";
+	cout << "Gas Workers: " << gas_workers  << "\n";
+	cout << "Mining Bases: " << mining_bases  << "\n";
+	cout << "Max Supply: " << max_supply  << "\n";
+	cout << "Army Value: " << army_value  << "\n";
+	cout << "Larva: " << larva  << "\n";
 }
 
 void Zerg::make_unit(int index) {
 	switch (index) {
 		case 0:
-			if (larva > 0 && minerals >= 50) {
+			if (larva > 0) {
 				larva--;
-				minerals -= 50;
 				unit_count[index]++;
 				mineral_workers++;
 			} else {
@@ -167,12 +163,4 @@ void Zerg::make_unit(int index) {
 			// Error: index out of range, bad input
 			break;
 	}
-}
-
-void Zerg::change_minerals(int i) {
-	minerals += i;
-}
-
-void Zerg::change_gas(int i) {
-	gas += i;
 }
