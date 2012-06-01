@@ -1,4 +1,5 @@
 #include "race.h"
+#include <string>
 
 class Zerg: public Race {
 
@@ -23,21 +24,8 @@ class Zerg: public Race {
 	class broodlord; // Index 12
   
 	// Buildings
-	//class extractor;
-	class hatchery;
-	class evolution_chamber;
-	class spawning_pool;
-	class roach_warren;
-	class baneling_nest;
-	class lair;
-	class hydralisk_den;
-	class infestation_pit;
-	class spire;
-	class nydus_network;
-	class hive;
-	class ultralisk_cavern;
-	class greater_spire;
-  
+ 
+
 	// Defensive Structures
 	// calculate when defending?
 	//class spore_crawler;
@@ -51,6 +39,16 @@ public:
 	void make_unit(int index);
 	void change_minerals(int i);
 	void change_gas(int i);
+	
+	// Building class
+	class zergbuildings{
+		public:
+   			zergbuildings();   
+   			bool add(int); //when player builds new building
+   			int howmany(string);
+		private:
+   			int count[14];	//keeps track of the number of each building
+	};
   
 private:
 	int mineral_workers;
@@ -65,5 +63,6 @@ private:
   
 	// 13 different units (You guys should watch 13 Assassins.) 
 	int unit_count[13];
-
+	
+	zergbuildings buildings;
 };

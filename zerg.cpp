@@ -164,3 +164,131 @@ void Zerg::make_unit(int index) {
 			break;
 	}
 }
+
+Zerg::zergbuildings::zergbuildings(){
+	for(int i =0; i<14; i++)
+	{
+		count[i] = 0;
+	}
+}
+
+bool Zerg::zergbuildings::add(int building)
+{
+    switch(building) {
+    
+	case 0: // "hatchery":     // count[0]
+   	 count[0]++;
+   	 
+	case 1: // "lair":   	 // count[1]
+   	 if(count[0] == 0) {
+   		 cout << "No hatcheries to upgrade" << endl;
+   		 break;
+   	 }
+   	 count[1]++;
+   	 count[0]--;
+   	 
+	case 2: // "hive":   	 // count[2]
+   	 if(count[1] == 0) {
+   		 cout << "No lairs to upgrade" << endl;
+   		 break;
+   	 }
+   	 count[2]++;
+   	 count[1]--;    
+
+	case 3: //"spine crawler"://count[3]
+   	 count[3]++;
+   	 
+	case 4: //"spore crawler"://count[4]
+   	 count[4]++;
+   	 
+	case 5: // "extractor":    //count[5]
+   	 count[5]++;
+   	 
+	case 6: // "spawning pool"://count[6]
+   	 count[6]++;
+   	 
+	case 7: // "evolution chamber"://count[7]
+   	 count[7]++;
+    
+	case 8: // "roach warren":    //count[8]
+   	 count[8]++;
+    
+	case 9: // "baneling nest":    //count[9]
+   	 count[9]++;
+    
+	case 10: // "hydralisk den":    //count[10]
+   	 count[10]++;
+   	 
+	case 11: // "spire":    //count[11]
+   	 count[11]++;
+   	 
+	case 12: // "greater spire":    //count[12]
+   	 count[12]++;
+    
+	case 13: // "ultralisk cavern"://count[13]
+   	 count[13]++;
+    
+    default:
+   	 cout << "Not valid building" << endl;
+   	 return false;
+    
+    }
+    
+    return;
+}
+
+int Zerg::zergbuildings::howmany(string building)
+{
+    switch(building) {
+    
+	case "hatchery":     // count[0]
+   	 return count[0];
+   	 
+    case "lair":   	 // count[1]
+   	 return count[1];
+
+   	 
+    case "hive":   	 // count[2]
+   	 return count[2];
+
+	case "spine crawler"://count[3]
+   	 return count[3];
+   	 
+	case "spore crawler"://count[4]
+   	 return count[4];
+   	 
+	case "extractor":    //count[5]
+   	 return count[5];
+   	 
+	case "spawning pool"://count[6]
+   	 return count[6];
+   	 
+	case "evolution chamber"://count[7]
+   	 return count[7];
+    
+	case "roach warren":    //count[8]
+   	 return count[8];
+    
+	case "baneling nest":    //count[9]
+   	 return count[9];
+    
+	case "hydralisk den":    //count[10]
+   	 return count[10];
+   	 
+	case "spire":    //count[11]
+   	 return count[11];
+   	 
+	case "greater spire":    //count[12]
+   	 return count[12];
+    
+	case "ultralisk cavern"://count[13]
+   	 return count[13];
+    
+    default:
+   	 cout << "Not valid building" << endl;
+   	 return false;
+    
+    }
+    
+    return;
+}
