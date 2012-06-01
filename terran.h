@@ -52,6 +52,7 @@ public:
 	int gas_per_min();
 	void print();
 	void make_unit(int index);
+	void make_building(int index);
 	void change_minerals(int i);
 	void change_gas(int i);
   
@@ -67,5 +68,6 @@ private:
   
 	// 13 different units (You guys should watch 13 Assassins.) 
 	int unit_count[14];
+	int building_count[15];
 
 };
