@@ -1,4 +1,4 @@
-#include "terran.h"
+#include "Protoss.h"
 
 Protoss::Protoss() {
 	unit_count[0] = 6; //Initial Drones
@@ -124,7 +124,7 @@ void Protoss::make_unit(int index) {
 			break;
 
 		case 8:
-			if (true)//there exists two templars
+			if (true){//there exists two templars
 				unit_count[index]++;
 			} else {
 				//Error: we require more templars
@@ -200,4 +200,128 @@ void Protoss::make_unit(int index) {
 			// Error: index out of range, bad input
 			break;
 	}
+}
+
+Protoss::protossbuildings::protossbuildings(){
+	for(int i =0; i<15; i++)
+	{
+		count[i] = 0;
+	}
+}
+
+bool Protoss::protossbuildings::add(int building)
+{
+    switch(building) {
+
+
+	case 0: // "nexus":     // count[0]
+   	 count[0]++;
+   	 
+	case 1: // "pylon":   	 // count[1]
+   	 count[1]++;
+   	 
+	case 2: // "assimilator":   	 // count[2]
+   	 count[2]++;   
+
+	case 3: // "gateway"://count[3]
+   	 count[3]++;
+   	 
+	case 4: // "forge": //count[4]
+   	 count[4]++;
+   	 
+	case 5: // "photon cannon":    //count[5]
+   	 count[5]++;
+   	 
+	case 6: //"warpgate"://count[6]
+   	 count[6]++;
+   	 
+	case 7: //"cybernetics core"://count[7]
+   	 count[7]++;
+    
+	case 8: // "twilight council":    //count[8]
+   	 count[8]++;
+    
+	case 9: //"robotics facility":    //count[9]
+   	 count[9]++;
+    
+	case 10: // "stargate":    //count[10]
+   	 count[10]++;
+   	 
+	case 11: // "templar archives":    //count[11]
+   	 count[11]++;
+   	 
+	case 12: // "dark shrine":    //count[12]
+   	 count[12]++;
+    
+	case 13: // "robotics bay"://count[13]
+   	 count[13]++;
+	 
+	case 14: //"fleet beacon": // count[14]
+		count[14]++;
+    
+    default:
+   	 cout << "Not valid building" << endl;
+   	 return false;
+    
+    }
+    
+    return;
+}
+
+int Protoss::protossbuildings::howmany(int building)
+{
+    switch(building) {
+    
+	case 0: //"nexus":     // count[0]
+   	 return count[0]++;
+   	 
+	case 1: //"pylon":   	 // count[1]
+   	 return count[1]++;
+   	 
+	case 2: //"assimilator":   	 // count[2]
+   	 return count[2]++;   
+
+	case 3:  //"gateway"://count[3]
+   	 return count[3]++;
+   	 
+	case 4: //"forge"://count[4]
+   	 return count[4]++;
+   	 
+	case 5: //"photon cannon":    //count[5]
+   	 return count[5]++;
+   	 
+	case 6: //"warpgate"://count[6]
+   	 return count[6]++;
+   	 
+	case 7: //"cybernetics core"://count[7]
+   	 return count[7]++;
+    
+	case 8: //"twilight council":    //count[8]
+   	 return count[8]++
+    
+	case 9: //"robotics facility":    //count[9]
+   	 return count[9]++;
+    
+	case 10: //"stargate":    //count[10]
+   	 return count[10]++;
+   	 
+	case 11: //"templar archives":    //count[11]
+   	 return count[11]++;
+   	 
+	case 12: //"dark shrine":    //count[12]
+   	 return count[12]++;
+    
+	case 13: //"robotics bay"://count[13]
+   	 return count[13]++;
+	 
+	case 14: //"fleet beacon": // count[14]
+	 return count[14]++;
+    
+    default:
+   	 cout << "Not valid building" << endl;
+   	 return false;
+    
+    }
+    
+    return;
 }
