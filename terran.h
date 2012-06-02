@@ -56,8 +56,8 @@ public:
 	void change_minerals(int i);
 	void change_gas(int i);
 	
-	// buidlings
-	class Terran::terranbuildings{
+	// buildings
+	class terranbuildings{
 	public:
    		terranbuildings();   
    		bool add(int); //when player builds new building
@@ -66,6 +66,8 @@ public:
    		int count[15];	//keeps track of the number of each building
 
 	};
+	
+	terranbuildings buildings;
   
 private:
 	int mineral_workers;

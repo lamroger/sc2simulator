@@ -13,6 +13,7 @@ Terran::Terran() {
 	minerals = 50;
 	gas = 0;
   
+	
 }
 
 int Terran::minerals_per_min() {
@@ -343,14 +344,14 @@ void Terran::make_building(int index) {
 
 
 
-Zerg::terranbuildings::terranbuildings(){
+Terran::terranbuildings::terranbuildings(){
 	for(int i =0; i<15; i++)
 	{
 		count[i] = 0;
 	}
 }
 
-bool Terran::terranbuildings::add(string building)
+bool Terran::terranbuildings::add(int building)
 {
     switch(building) {
     
@@ -387,7 +388,7 @@ bool Terran::terranbuildings::add(string building)
    	 count[7]++;
     
 	case 8: //"missile turret":    //count[8]
-   	 count[8]++
+   	 count[8]++;
     
 	case 9: //"sensor tower":    //count[9]
    	 count[9]++;
@@ -401,7 +402,7 @@ bool Terran::terranbuildings::add(string building)
 	case 12: //"armory":    //count[12]
    	 count[12]++;
     
-	case 12: //"starport"://count[13]
+	case 13: //"starport"://count[13]
    	 count[13]++;
 	 
 	case 14: //"tech lab": // count[14]
