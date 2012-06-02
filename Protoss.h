@@ -18,23 +18,6 @@ class Protoss: public Race {
 	class voidRay; // Index 12
 	class carrier; //Index 13
 	class mothership; //Index 14
-
-	//Buildings
-	class nexus;
-	class pylon;
-	class assimilator;
-	class gateway;
-	class forge;
-	class photonCannon;
-	class warpGate;
-	class cyberneticsCore;
-	class twilightCouncil;
-	class roboticsFacility;
-	class stargate;
-	class templarArchives;
-	class darkShrine;
-	class roboticsBay;
-	class fleetBeacon;
   
 public:
 	Protoss();
@@ -45,6 +28,16 @@ public:
 	void make_building(int index);
 	void change_minerals(int i);
 	void change_gas(int i);
+	
+	// buidlings
+	class Protoss::protossbuildings{
+	public:
+   		protossbuildings();   
+   		bool add(int); //when player builds new building
+   		int howmany(int);
+   	private:
+   		int count[15];	//keeps track of the number of each building
+	};
   
 private:
 	int mineral_workers;
