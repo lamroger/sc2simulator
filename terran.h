@@ -24,27 +24,27 @@ class Terran: public Race {
 	class mule; // Index 13
   
 	// Buildings
-	class command_center; // Index 0
-	class orbital_command; // Index 1
-	class planetary_fortress; // Index 2
-	class supply_depot; // Index 3
-	class refinery; // Index 4
-	class barracks; // Index 5
-	class engineering_bay; // Index 6
-	class bunker; // Index 7
-	class factory; // Index 8
-	class ghost_academy; // Index 9
-	class armory; // Index 10
-	class starport; // Index 11
-	class fusion_core; // Index 12
-	class tech_lab; // Index 13
-	class reactor; // Index 14
+	// class command_center; // Index 0
+	// class orbital_command; // Index 1
+	// class planetary_fortress; // Index 2
+	// class supply_depot; // Index 3
+	// class refinery; // Index 4
+	// class barracks; // Index 5
+	// class engineering_bay; // Index 6
+	// class bunker; // Index 7
+	// class factory; // Index 8
+	// class ghost_academy; // Index 9
+	// class armory; // Index 10
+	// class starport; // Index 11
+	// class fusion_core; // Index 12
+	// class tech_lab; // Index 13
+	// class reactor; // Index 14
 	
   
 	// Defensive Structures
 	// calculate when defending?
-	//class missle_turret;
-	//class sensor_tower
+	// class missle_turret;
+	// class sensor_tower
   
 public:
 	Terran();
@@ -55,6 +55,17 @@ public:
 	void make_building(int index);
 	void change_minerals(int i);
 	void change_gas(int i);
+	
+	// buidlings
+	class Terran::terranbuildings{
+	public:
+   		terranbuildings();   
+   		bool add(int); //when player builds new building
+   		int howmany(int);
+   	private:
+   		int count[15];	//keeps track of the number of each building
+
+	};
   
 private:
 	int mineral_workers;
