@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 #include "Protoss.h"
+=======
+#include "protoss.h"
+>>>>>>> origin/roger
 
 Protoss::Protoss() {
 	unit_count[0] = 6; //Initial Drones
