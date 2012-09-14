@@ -1,36 +1,56 @@
 #include "race.h"
 
 class Protoss: public Race {
-
-	// Units
-	class probe; // Index 0
-	class zealot; // Index 1
-	class stalker; // Index 2
-	class sentry; // Index 3
-	class highTemplar; // Index 4
-	class darkTemplar; // Index 5
-	class immortal; // Index 6
-	class colossus; // Index 7
-	class archon; // Index 8
-	class observer; // Index 9
-	class warpPrism; // Index 10
-	class Pheonix; // Index 11
-	class voidRay; // Index 12
-	class carrier; //Index 13
-	class mothership; //Index 14
-  
 public:
 	Protoss();
 	int minerals_per_min();
 	int gas_per_min();
+	ostream& operator<< (ostream&);
 	void print();
+	int get_mineral() const;
+	int get_gas() const;
 	void make_unit(int index);
-	void make_building(int index);
+	bool make_building(int index); //need to make this
 	void change_minerals(int i);
 	void change_gas(int i);
-	
-	// buidlings
-	class Protoss::protossbuildings{
+	int howmanyunits(int);
+	int howmanybuildings(int);
+	int get_army();
+	int army_health();
+	int army_attack();
+	bool sendToGas();
+	bool sendToMin();
+	void addLarva();
+	int getLarva();
+
+class Units{
+	public:
+		Units();
+		void add(int i);
+		int howmany(int i);
+		int getMinCost(int index){ return minCost[index]; };
+		int getGasCost(int index){ return gasCost[index]; };
+		int getSupplyCost(int index){ return supplyCost[index]; };
+		int getBuildingReq(int index){ return buildingReq[index]; };
+		//void getStats(int i);, getattack, def, etc
+
+	private:
+		int count[15];
+		int attack[15];
+		int health[15];
+		int armor[15];
+		int minCost[15];
+		int gasCost[15];
+		int supplyCost[15];
+		int buildingReq[15];
+
+	};
+
+	bool unitCheckReq(int i);
+	Units protossUnits;
+
+	// buildings
+	class protossbuildings{
 	public:
    		protossbuildings();   
    		bool add(int); //when player builds new building
@@ -38,6 +58,11 @@ public:
    	private:
    		int count[15];	//keeps track of the number of each building
 	};
+
+	bool buildingCheckReq(int i);
+	protossbuildings buildings;
+
+
   
 private:
 	int mineral_workers;
@@ -50,6 +75,5 @@ private:
 	int gas;
   
 	
-	int unit_count[15]; //15 different units
-	int building_count[15]; 
+	//int unit_count[15]; //15 different units
 };

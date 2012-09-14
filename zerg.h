@@ -8,21 +8,6 @@ class Zerg: public Race {
 	Trying to get basic model working. 
 	*/
 	
-	// Units
-	class drone; // Index 0
-	class overlord; // Index 1
-	class zergling; // Index 2
-	class queen; // Index 3
-	class overseer; // Index 4
-	class roach; // Index 5
-	class baneling; // Index 6
-	class hydralisk; // Index 7
-	class infestor; // Index 8
-	class mutalisk; // Index 9
-	class corruptor; // Index 10
-	class ultralisk; // Index 11
-	class broodlord; // Index 12
-  
 	// Buildings
  
 
@@ -35,19 +20,56 @@ public:
 	Zerg();
 	int minerals_per_min();
 	int gas_per_min();
+	ostream& operator<< (ostream&);
 	void print();
 	void make_unit(int index);
+	bool make_building(int index);
+	int get_mineral() const;
+	int get_gas() const;
 	void change_minerals(int i);
 	void change_gas(int i);
-	
+	int get_army();
+	int army_health();
+	int army_attack();
+	int howmanyunits(int);
+	int howmanybuildings(int);
+	bool unitCheckReq(int i);
+	bool sendToGas();
+	bool sendToMin();
+	void addLarva();
+	int getLarva();
+
+	class Units{
+	public:
+		Units();
+		void add(int i);
+		void subdrone(){count[0]--; return;};
+		int howmany(int i);
+		int getMinCost(int index){ return minCost[index]; };
+		int getGasCost(int index){ return gasCost[index]; };
+		int getSupplyCost(int index){ return supplyCost[index]; };
+		int getBuildingReq(int index){ return buildingReq[index]; };
+		//void getStats(int i);, getattack, def, etc
+
+	private:
+		int count[15];
+		int attack[15];
+		int health[15];
+		int armor[15];
+		int minCost[15];
+		int gasCost[15];
+		int supplyCost[15];
+		int buildingReq[15];
+
+	};	
 	// Building class
 	class zergbuildings{
 		public:
    			zergbuildings();   
    			bool add(int); //when player builds new building
-   			int howmany(string);
+   			int howmany(int);
 		private:
-   			int count[14];	//keeps track of the number of each building
+   			int count[15];	//keeps track of the number of each building
 	};
   
 private:
@@ -65,4 +87,5 @@ private:
 	int unit_count[13];
 	
 	zergbuildings buildings;
+	Units zergUnits;
 };
