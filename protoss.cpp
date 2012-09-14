@@ -1,4 +1,4 @@
-#include "Protoss.h"
+#include "protoss.h"
 #include <iostream>
 #include <conio.h>
 

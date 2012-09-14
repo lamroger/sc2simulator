@@ -1,11 +1,10 @@
 #include "zerg.h"
 #include "terran.h"
-#include "Protoss.h"
+#include "protoss.h"
 #include <iostream>
 #include <conio.h>
 #include <iomanip>
 #include <cctype>
-
 
 using namespace std;
 
